@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Stonetale</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="<?php echo site_url('bootstrap/dist/css/bootstrap.css'); ?>" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="<?php echo site_url('bootstrap/js/ie-emulation-modes-warning.js'); ?>"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="<?php echo site_url('bootstrap/js/ie10-viewport-bug-workaround.js'); ?>"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="<?php echo site_url('bootstrap/dist/css/carousel.css'); ?>" rel="stylesheet">
+    <link href="<?php echo site_url('bootstrap/dist/css/blog.css'); ?>" rel="stylesheet">
+    <!-- Myself css-->
+    <link href="<?php echo site_url('bootstrap/dist/css/index.css'); ?>" rel="stylesheet">
+
+  </head>
+
+
+<!-- NAVBAR
+================================================== -->
+  <body>
+    <div id="navbar-top" class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"> STONETALE</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="<?php echo site_url('index/first_sub'); ?>">First</a></li>
+          <li><a href="<?php echo site_url('index/second_sub'); ?>">Second</a></li>
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Operation <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="<?php echo site_url('index/article/article_add'); ?>">Diary Publish</a></li>
+                <li><a href="<?php echo site_url('index/ph_diary_add/phdiary_add'); ?>">Photo Publish</a></li>
+                <li><a href="<?php echo site_url('index/ph_diary'); ?>">Ph_diary</a></li>
+                <li class="dropdown-header">Nav header</li>
+              </ul>
+          </li>
+          <li><a href="<?php echo site_url('index/myzone'); ?>">Myzone</a></li>
+          <div class="user_show"></div>
+            <?php
+              foreach ($user as $user_row) {
+            ?>
+            <li>
+            <a href="<?php echo site_url('index/myzone'); ?>">user:  <?php echo $user_row->user_name;?></a>
+            </li>
+            <?php }?>
+  				<?php 
+  					if($id_user != ''){
+  				?>
+  					<li><a href="<?php echo site_url('index/denglu/user_logout'); ?>">Logout</a></li>
+  				<?php
+  					}else{
+  				?>
+  					<li><a href="<?php echo site_url('index/denglu/user_denglu') ;?>">Login</a></li>
+  				<?php
+  					}
+  				?>
+                
+				  <li><a href="<?php echo site_url('index/zhuce/add'); ?>">Register</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- page head    -->
+
+    <!--  large hard nav
+    ================================
+    <header class="header-19" id="home">
+    <div class="container">
+      <div class="row">
+          <div class="navbar col-sm-2 navbar-fixed-top" role="navigation" >
+            <div class="navbar-toggle"></div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#home">HOME</a></li>
+                <li><a href="#note">NOTE</a></li>
+                <li><a href="#impression">IMPRESSION</a></li>
+                <li><a href="#tale">TALE</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+    </header>
+    ======= -->
+
+    <!--======================
+    <button class="btn btn-primary btn-default pull-right tooltip-bottom" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Button
+    </button>
+
+    <div class="collapse" id="collapseExample">
+      <div class="well">
+        Example....
+      </div>
+    </div>
+    -->
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div class="container">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+        <ol class="carousel-indicators ">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="5"></li>
+          <li data-target="#myCarousel" data-slide-to="6"></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="<?php echo site_url('images/system/img_index01.jpg'); ?>" alt="First slide" class="img-responsive">
+            <div class="container">
+              <div class="carousel-caption">
+                <!--<p><a class="btn btn-lg btn-primary" href="#" >Sign up today</a></p>-->
+              </div>
+            </div>
+          </div>
+
+          <?php
+          foreach ($ph_diary as $diary_row) {
+          ?>
+           <?php
+            $temp=mt_rand(1,4);
+            $pattern="/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.png]))[\'|\"].*?[\/]?>/";
+            $content=$diary_row->content;
+            preg_match_all($pattern,$content,$matchContent);
+            $temp=$matchContent[1][0];
+            ?> 
+          <div class="item">
+            <a  href="<?php echo site_url('index/ph_diary_sub').'/index/'.$diary_row->id_phd;?>" target="_black"><img src="<?php echo $temp; ?>" alt="" class="img-responsive"></a>
+            <div class="container">
+              <div class="carousel-caption">
+                <p><a  href="<?php echo site_url('index/ph_diary_sub').'/index/'.$diary_row->id_phd;?>" target="_black"><?php echo $diary_row->title; ?></a></p>
+              </div>
+            </div>
+          </div>
+          <?php }?>
+        </div>
+
+      </div><!-- /.carousel -->
+    </div>
+    
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row index_ph_diary">
+        <?php
+          foreach ($ph_diary as $diary_row) {
+        ?>
+        <div class="col-lg-4">
+        
+          <?php
+            $temp=mt_rand(1,4);
+            $pattern="/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.png]))[\'|\"].*?[\/]?>/";
+            $content=$diary_row->content;
+            preg_match_all($pattern,$content,$matchContent);
+            $temp=$matchContent[1][0];
+            
+          ?> 
+
+          <a href="<?php echo site_url('index/ph_diary_sub/index').'/'.$diary_row->id_phd;?>" target="_black"><img class="img-responsive" src="<?php echo $temp; ?>" alt="image"> </a>
+
+          
+          <div class="index_ph_title"><?php echo $diary_row->user_name;?>，<?php echo $diary_row->time; ?></div>
+          
+        </div><!-- /.col-lg-4 -->
+        <?php    
+          }   
+        ?>
+      </div><!-- /.row -->
+
+	  <!--diary show-->
+      <div class="row" >
+        <?php
+          foreach ($diary as $diary_row) {
+        ?>
+          <div class="index_diary">
+            <h3 class="blog-post-title">
+              <a href="<?php echo site_url('index/diary_sub/index').'/'.$diary_row->id_diary;?>" target="_black"><?php echo $diary_row->title; ?></a>
+            </h3>
+            <p>
+              <a href="#"><?php echo $diary_row->user_name;?></a>，
+              <?php echo $diary_row->time; ?> 
+            </p>
+
+            <div class="index_text"><?php echo mb_substr( strip_tags( $diary_row->content), 0, 250, 'utf-8').'......' ;?>
+            </div>            
+          </div>             
+        <?php
+          }
+        ?>
+      </div><!-- /.row -->
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+      <br>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h3 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h3>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img src="<?php echo site_url('images/system/img_index02.jpg'); ?>" class="featurette-image img-responsive"   alt="Generic placeholder image">
+        </div>
+
+      </div>
+      <!-- /END THE FEATURETTES -->
+
+      <p id="foot_back"><a href="#">Back to top</a></p>
+
+    </div><!-- /.container -->
+
+    <!-- FOOTER -->
+      <footer>
+        <div class="foot_word">
+          <a href="#">About us </a> | Email: stonetale@yeah.net | stonetale at 2014-1015
+        </div>
+      </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="<?php echo base_url().'bootstrap/dist'; ?>/js/jquery-2.1.1.min.js"></script>
+    <script src="<?php echo base_url().'bootstrap/dist'; ?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url().'bootstrap/dist'; ?>/js/docs.min.js"></script>
+    <script src="<?php echo base_url().'bootstrap/dist'; ?>/js/carousel.js"></script>
+
+
+  </body>
+</html>
